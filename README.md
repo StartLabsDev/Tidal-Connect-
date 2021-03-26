@@ -6,8 +6,8 @@ Image based on https://github.com/shawaj/ifi-tidal-release. Please visit for ful
 
 1. Clone repository on your RasberryPi. Note if you are using Hifiberry, you can get the file directly using 
 ```
-curl -O https://github.com/TonyTromp/tidal-connect-docker/archive/refs/heads/master.zip
-unzip master.zip
+curl https://codeload.github.com/TonyTromp/tidal-connect-docker/zip/refs/heads/master >tidal-connect-docker.zip
+unzip tidal-connect-docker.zip
 ```
 2. cd into Docker folder (important)
 3. Execute ./build_docker.sh
