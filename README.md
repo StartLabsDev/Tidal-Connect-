@@ -37,17 +37,10 @@ docker run -ti \
 
 ## run manually (set playback-device to your device)
 ```
-bin/tidal_connect_application \
---tc-certificate-path "/usr/ifi/ifi-tidal-release/IfiAudio_ZenStream.dat" \
--f "HiTide RasPi Streamer" \
---codec-mpegh false \
---codec-mqa false \
---model-name "HiTide RasPi Streamer" \
---disable-app-security false \
---disable-web-security false \
---enable-mqa-passthrough false \
---log-level 3 \
---enable-websocket-log "0" \
---netif-for-deviceid wlan0 \
---playback-device "snd_rpi_hifiberry_dac: HifiBerry DAC HiFi pcm5102a-hifi-0 (hw:0,0)"
+ docker run -ti \
+ --network="host" \
+ --device /dev/snd \
+ --dns 8.8.8.8 \
+ -v /var/run/dbus:/var/run/dbus \
+ edgecrush3r/ifi-tidal-connect:latest /bin/bash
 ```
