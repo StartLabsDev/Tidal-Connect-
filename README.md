@@ -9,9 +9,15 @@ Image based on https://github.com/shawaj/ifi-tidal-release. Please visit for ful
 curl https://codeload.github.com/TonyTromp/tidal-connect-docker/zip/refs/heads/master >tidal-connect-docker.zip
 unzip tidal-connect-docker.zip
 ```
-2. cd into Docker folder (important)
-3. Execute ./build_docker.sh
-4. RUN (foreground) using
+2. Build the docker image:
+```
+#Go to the <tidal-connect-docker>/Docker path
+cd tidal-connect-docker-master/Docker
+
+# Build the image
+./build_docker.sh
+```
+6. RUN docker image in foreground
 ```
  docker run -ti \
  --network="host" \
