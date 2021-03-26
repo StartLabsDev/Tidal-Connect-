@@ -11,48 +11,41 @@ unzip tidal-connect-docker.zip
 ```
 2. Build the docker image:
 ```
-#Go to the <tidal-connect-docker>/Docker path
+# Go to the <tidal-connect-docker>/Docker path
 cd tidal-connect-docker-master/Docker
 
 # Build the image
 ./build_docker.sh
 ```
-6. RUN docker image in foreground
+
+3. Run docker image using docker-compose
+
 ```
- docker run -ti \
- --network="host" \
- --device /dev/snd \
- --dns 8.8.8.8 \
- -v /var/run/dbus:/var/run/dbus \
- edgecrush3r/tidal-connect:latest /app/ifi-tidal-release/bin/tidal_connect_application \
-   --tc-certificate-path "/app/ifi-tidal-release/id_certificate/IfiAudio_ZenStream.dat" \
-   -f "Hifiberry Tidal Connect" \
-   --codec-mpegh true \
-   --codec-mqa false \
-   --model-name "HiTide RasPi Streamer" \
-   --disable-app-security false \
-   --disable-web-security false \
-   --enable-mqa-passthrough false \
-   --log-level 3 \
-   --enable-websocket-log "0" \
+# Go to the <tidal-connect-docker>/Docker path
+
+cd tidal-connect-docker-master/Docker
+
+
+# Run docker image as daemon
+docker-compose up -d
+
+# Stop docker image
+docker-compose down
 ```
 
-5. RUN in background as daemon
+
+# *** Other Stuff *** #
+
+
+Running without docker-compose (using docker command) 
 ```
  docker run -td \
  --network="host" \
  --device /dev/snd \
  --dns 8.8.8.8 \
  -v /var/run/dbus:/var/run/dbus \
- edgecrush3r/tidal-connect:latest /app/ifi-tidal-release/bin/tidal_connect_application \
-   --tc-certificate-path "/app/ifi-tidal-release/id_certificate/IfiAudio_ZenStream.dat" \
-   -f "Hifiberry Tidal Connect" \
-   --codec-mpegh true \
-   --codec-mqa false \
-   --model-name "HiTide RasPi Streamer" \
-   --disable-app-security false \
-   --disable-web-security false \
-   --enable-mqa-passthrough false 
+ edgecrush3r/tidal-connect:latest 
+
 ```
 
 # Debugging
@@ -65,3 +58,13 @@ docker run -ti \
  edgecrush3r/tidal-connect \
  /bin/bash
 ```
+
+List Devices
+```
+docker run -ti \
+--device /dev/snd \
+-v /var/run/dbus:/var/run/dbus \
+-v /var/run/avahi-daemon/socket:/var/run/avahi-daemon/socket \
+--entrypoint /app/ifi-tidal-release/bin/ifi-pa-devs-get edgecrush3r/tidal-connect
+```
+
