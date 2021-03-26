@@ -12,3 +12,14 @@ Image based on https://github.com/shawaj/ifi-tidal-release. Please visit for ful
  docker run -td --device /dev/snd edgecrush3r/ifi-tidal-connect:latest
 ```
 
+# Debugging
+
+1. To debug the image. Edit the Docker file and comment out (with #) the ENTRYPOINT ["/entrypoint.sh"]
+```
+#  ENTRYPOINT ["entrypoint.sh"]
+```
+2. build image using ./build_docker.sh
+3. Enter shell mode using
+```
+ docker run -ti --device /dev/snd edgecrush3r/ifi-tidal-connect:latest /bin/bash
+```
