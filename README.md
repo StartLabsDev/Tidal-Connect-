@@ -9,7 +9,11 @@ Image based on https://github.com/shawaj/ifi-tidal-release. Please visit for ful
 3. Execute ./build_docker.sh
 4. Run using
 ```
- docker run -td --device /dev/snd edgecrush3r/ifi-tidal-connect:latest
+docker run -td \
+  --device /dev/snd \
+  -v /var/run/dbus:/var/run/dbus \
+  -v /var/run/avahi-daemon/socket:/var/run/avahi-daemon/socket \
+  edgecrush3r/ifi-tidal-connect:latest
 ```
 
 # Debugging
@@ -21,5 +25,10 @@ Image based on https://github.com/shawaj/ifi-tidal-release. Please visit for ful
 2. build image using ./build_docker.sh
 3. Enter shell mode using
 ```
- docker run -ti --device /dev/snd edgecrush3r/ifi-tidal-connect:latest /bin/bash
+docker run -ti \
+ --device /dev/snd \
+ -v /var/run/dbus:/var/run/dbus \
+ -v /var/run/avahi-daemon/socket:/var/run/avahi-daemon/socket \
+ edgecrush3r/ifi-tidal-connect:latest \
+ /bin/bash
 ```
