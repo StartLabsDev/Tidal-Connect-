@@ -1,6 +1,12 @@
 # Tidal Connect Docker image (for RaspberryPi)
 
-Image based on https://github.com/shawaj/ifi-tidal-release. Please visit for full information.
+Image based on https://github.com/shawaj/ifi-tidal-release and https://github.com/seniorgod/ifi-tidal-release. 
+Please visit https://www.raspberrypi.org/forums/viewtopic.php?t=297771 for full information on the backround of this project.
+
+# Why this Docker Port
+
+I have been hapilly using HifiberryOS but beeing an extremely slim OS (based on Buildroot) has its pitfalls, that there is no easy way of extending its current features. Thankfully the Hifiberry Team have blessed us by providing Docker and Docker-Compose within OS.
+As I didnt want to add yet another system for Tidal integration (e.g. Bluesound, Volumio), i stumbled upon this https://support.hifiberry.com/hc/en-us/community/posts/360013667717-Tidal-Connect-, and i decided to do something about it. 
 
 # Installation
 
