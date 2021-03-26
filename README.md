@@ -13,7 +13,7 @@ docker run -td \
   --device /dev/snd \
   -v /var/run/dbus:/var/run/dbus \
   -v /var/run/avahi-daemon/socket:/var/run/avahi-daemon/socket \
-  edgecrush3r/ifi-tidal-connect:latest
+  edgecrush3r/tidal-connect:latest
 ```
 
 # Debugging
@@ -29,7 +29,7 @@ docker run -ti \
  --device /dev/snd \
  -v /var/run/dbus:/var/run/dbus \
  -v /var/run/avahi-daemon/socket:/var/run/avahi-daemon/socket \
- edgecrush3r/ifi-tidal-connect:latest \
+ edgecrush3r/tidal-connect \
  /bin/bash
 ```
 ## create devices file
