@@ -5,7 +5,7 @@ Image based on https://github.com/shawaj/ifi-tidal-release. Please visit for ful
 # Installation
 
 1. Clone repository on your RasberryPi.
-2. cd into Docker
+2. cd into Docker folder (important)
 3. Execute ./build_docker.sh
 4. Run using
 ```
