@@ -16,11 +16,11 @@ RUN apt install -y ./libcurl3_7.38.0-4+deb8u16_armhf.deb --allow-downgrades
 RUN rm ./libcurl3_7.38.0-4+deb8u16_armhf.deb
 
 COPY bin/ bin
-COPY pa_devs/ ./
+COPY pa_devs/ .
 COPY play .
-COPY id_certificate/ id_certificate/
+COPY id_certificate/ id_certificate
 COPY licenses/ licenses
-RUN chmod a+x bin/*
+RUN chmod a+x bin/* 
 
 COPY Docker/entrypoint.sh /
 RUN chmod a+x /entrypoint.sh
