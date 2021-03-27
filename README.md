@@ -43,12 +43,12 @@ docker-compose down
 # *** Other Stuff *** #
 
 
-Running without docker-compose (using docker command) 
+Running as daemon without using docker-compose 
 ```
  docker run -td \
  --network="host" \
- --device /dev/snd \
  --dns 8.8.8.8 \
+ --device /dev/snd \
  -v /var/run/dbus:/var/run/dbus \
  edgecrush3r/tidal-connect:latest 
 
@@ -58,9 +58,10 @@ Running without docker-compose (using docker command)
 
 ```
 docker run -ti \
+ --network="host" \
+ --dns 8.8.8.8 \
  --device /dev/snd \
  -v /var/run/dbus:/var/run/dbus \
- -v /var/run/avahi-daemon/socket:/var/run/avahi-daemon/socket \
  edgecrush3r/tidal-connect \
  /bin/bash
 ```
