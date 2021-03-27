@@ -10,7 +10,7 @@ As I didnt want to add yet another system for Tidal integration (e.g. Bluesound,
 
 # Installation
 
-1. Clone repository on your RasberryPi. Note if you are using Hifiberry, you can get the file directly using 
+1. SSH into your RaspberryPi and clone/copy this repository onto your system.  Note if you are using Hifiberry, you can get the file directly using 
 ```
 curl https://codeload.github.com/TonyTromp/tidal-connect-docker/zip/refs/heads/master >tidal-connect-docker.zip
 unzip tidal-connect-docker.zip
