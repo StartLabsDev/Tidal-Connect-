@@ -80,3 +80,7 @@ docker run -ti \
 --entrypoint /app/ifi-tidal-release/bin/ifi-pa-devs-get edgecrush3r/tidal-connect
 ```
 
+# Tweaking and tuning configuration
+If you need to alter any parameters, just change the entrypoint.sh to contain whatever settinsgs you need
+The entrypoint.sh file/command is executed upon start of the container and mounted via docker-compose.
+
