@@ -37,10 +37,10 @@ cd tidal-connect-docker-master/Docker
 cd tidal-connect-docker-master/Docker
 
 
-# Run docker image as daemon
+# Run docker image as daemon (start Tidal Connect)
 docker-compose up -d
 
-# Stop docker image
+# Stop docker image (stop Tidal Connect)
 docker-compose down
 ```
 
