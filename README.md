@@ -21,6 +21,9 @@ git clone https://github.com/TonyTromp/tidal-connect-docker.git
 
 ```
 2. Build the docker image:
+
+NOTE: I have already uploaded a image to Docker Hub, which means you can skip this time consuming step and go directly to step 3.
+
 ```
 # Go to the <tidal-connect-docker>/Docker path
 cd tidal-connect-docker-master/Docker
