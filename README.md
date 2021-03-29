@@ -41,6 +41,7 @@ cd tidal-connect-docker-master/Docker
 
 
 # Run docker image as daemon (start Tidal Connect)
+# Note: if you skipped step 2. the next command will also download the image from docker-hub, on first start.
 docker-compose up -d
 
 # Stop docker image (stop Tidal Connect)
