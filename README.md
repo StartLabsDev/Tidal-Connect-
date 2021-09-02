@@ -1,6 +1,5 @@
 # Tidal Connect Docker image (for RaspberryPi)
 
-
 Image based on https://github.com/shawaj/ifi-tidal-release and https://github.com/seniorgod/ifi-tidal-release. 
 Please visit https://www.raspberrypi.org/forums/viewtopic.php?t=297771 for full information on the backround of this project.
 
