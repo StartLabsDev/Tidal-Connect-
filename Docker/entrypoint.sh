@@ -14,6 +14,8 @@ nohup /app/ifi-tidal-release/bin/tidal_connect_application \
    --log-level 3 \
    --enable-websocket-log "0" \
    &
+sleep 10
+ps aux | grep tidal
  
 echo "Starting Speaker Control Application.."
 /app/ifi-tidal-release/bin/speaker_controller_application 
