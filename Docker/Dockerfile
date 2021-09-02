@@ -15,11 +15,11 @@ RUN curl -k -O -L http://security.debian.org/debian-security/pool/updates/main/c
 RUN apt install -y ./libcurl3_7.38.0-4+deb8u16_armhf.deb --allow-downgrades
 RUN rm ./libcurl3_7.38.0-4+deb8u16_armhf.deb
 
-COPY bin/ bin
-COPY pa_devs/ .
-COPY play .
-COPY id_certificate/ id_certificate
-COPY licenses/ licenses
+COPY Docker/src/bin/ bin
+COPY Docker/src/pa_devs/ .
+COPY Docker/src/play .
+COPY Docker/id_certificate/ id_certificate
+COPY Docker/licenses/ licenses
 RUN chmod a+x bin/* 
 
 COPY Docker/entrypoint.sh /
