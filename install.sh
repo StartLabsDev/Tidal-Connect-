@@ -25,3 +25,5 @@ if [ "$(docker ps -q -f name=docker_tidal-connect)" ]; then
   ./stop-tidal-service.sh
 fi
 ./start-tidal-service.sh
+
+./restart_beocreate2.sh

@@ -2,10 +2,8 @@ var tidal = (function() {
 
 var tidalEnabled = false;
 
-console.log('tidal-client.js added');
 
 $(document).on("tidal", function(event, data) {
-  console.log('RECEIVED EVENT');
 	if (data.header == "tidalSettings") {
 		
 		if (data.content.tidalEnabled) {
@@ -28,18 +26,10 @@ $(document).on("tidal", function(event, data) {
 		beo.notify(false, "tidal");
 	}
 	
-	if (data.header == "logInError") {
-		//beo.ask("tidal-login-error-prompt");
-		beo.notify({title: "Error logging in", message: "The user name or password may be incorrect, or the account is not a tidal Premium account.", timeout: false, buttonTitle: "Dismiss", buttonAction: "close"});
-	}
 });
 
-function testFunction() {
-  console.log(this);
-}
 
 function toggleEnabled() {
-        console.log('toggleEnabled() - called');
 	enabled = (!tidalEnabled) ? true : false;
 	if (enabled) {
 		beo.notify({title: "Turning tidal Connect on...", icon: "attention", timeout: false});
@@ -47,28 +37,14 @@ function toggleEnabled() {
 		beo.notify({title: "Turning tidal Connect off...", icon: "attention", timeout: false});
 	}
 	beo.send({target: "tidal", header: "tidalEnabled", content: {enabled: enabled}});
-}
 
-function logIn() {
-	
-	beo.startTextInput(3, "Log In with tidal", "Enter your tidal user name and password.", {placeholders: {password: "Password", text: "User name"}, minLength: {text: 2, password: 3}}, function(input) {
-		if (input) {
-			beo.send({target: "tidal", header: "logIn", content: {username: input.text, password: input.password}});
-			beo.notify({title: "Updating settings...", icon: "attention", timeout: false, id: "tidal"});
-		}
-	});
-}
-
-function logOut() {
-	beo.send({target: "tidal", header: "logOut"});
-	beo.notify({title: "Updating settings...", icon: "attention", timeout: false, id: "tidal"});
 }
 
 
 return {
 	toggleEnabled: toggleEnabled,
-	logIn: logIn,
-	logOut: logOut
+	logIn: true,
+	logOut: false
 };
 
 })();

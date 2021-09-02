@@ -17,8 +17,6 @@ SOFTWARE.*/
 
 // tidal CONTROL FOR BEOCREATE
 
-console.log('TIDAL FILE INCLUDED');
-
 var exec = require("child_process").exec;
 var fs = require("fs");
 
@@ -108,23 +106,12 @@ var fs = require("fs");
 	
 	
 	function gettidalStatus(callback) {
-            exec("systemctl is-active --quiet tidal.service").on('exit', function(code) {
-               console.log('gettidalStatus code'+ code);
-			if (code == 0) {
-                                settings.tidalEnabled = true;
-				callback(true);
-			} else {
-                                settings.tidalEnabled = false;
-			        callback(false);
-			}
-            });
-            //console.log('HELLO MOTO!');            
-            //settings.tidalEnabled = !settings.tidalEnabled;
-            //callback(settings.tidalEnabled);
+            settings.tidalEnabled = true;
+            callback(true);
 	}
 	
 	function settidalStatus(enabled, callback) {
-            settings.tidalEnabled = enabled;
+            settings.tidalEnabled = true;
             callback(true);
 	}
 	
