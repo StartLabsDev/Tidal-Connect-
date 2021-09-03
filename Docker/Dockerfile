@@ -14,12 +14,13 @@ RUN rm ./libssl1.0.0_1.0.1t-1+deb8u12_armhf.deb
 RUN curl -k -O -L http://security.debian.org/debian-security/pool/updates/main/c/curl/libcurl3_7.38.0-4+deb8u16_armhf.deb
 RUN apt install -y ./libcurl3_7.38.0-4+deb8u16_armhf.deb --allow-downgrades
 RUN rm ./libcurl3_7.38.0-4+deb8u16_armhf.deb
+RUN apt install -y -q tmux
 
 COPY Docker/src/bin/ bin
 COPY Docker/src/pa_devs/ .
 COPY Docker/src/play .
-COPY Docker/id_certificate/ id_certificate
-COPY Docker/licenses/ licenses
+COPY Docker/src/id_certificate id_certificate
+COPY Docker/src/licenses licenses
 RUN chmod a+x bin/* 
 
 COPY Docker/entrypoint.sh /

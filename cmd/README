@@ -1,0 +1,4 @@
+nowPlayingController.metadata.album
+nowPlayingController.metadata.artist='WHATEVER';
+nowPlayingController.metadata.title='BLABL';
+
