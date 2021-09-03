@@ -29,19 +29,6 @@ cd tidal-connect-docker
 ./install.sh
 ```
 
-2. Build the docker image (OPTIONAL!):
-
-NOTE: I have already uploaded a pre-build docker image to Docker Hub for you. 
-This means you can skip this time consuming step to build the image manually, go directly to step 3 to use the pre-build image.
-
-```
-# Go to the <tidal-connect-docker>/Docker path
-cd tidal-connect-docker-master/Docker
-
-# Build the image
-./build_docker.sh
-```
-
 
 
 # *** Other Stuff *** #
