@@ -36,7 +36,7 @@ cd tidal-connect-docker
 Build the docker image (OPTIONAL!):
 
 NOTE: I have already uploaded a pre-build docker image to Docker Hub for you.
-This means you can skip this time consuming step to build the image manually, go directly to step 3 to use the pre-build image.
+This means you can skip this time consuming step to build the image manually, and use the pre-build image unless you need to add something to the base image.
 
 ```
 # Go to the <tidal-connect-docker>/Docker path
