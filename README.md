@@ -21,7 +21,15 @@ unzip tidal-connect-docker.zip
 git clone https://github.com/TonyTromp/tidal-connect-docker.git
 
 ```
-2. Build the docker image:
+
+2. Install and run
+
+```
+cd tidal-connect-docker
+./install.sh
+```
+
+2. Build the docker image (OPTIONAL!):
 
 NOTE: I have already uploaded a pre-build docker image to Docker Hub for you. 
 This means you can skip this time consuming step to build the image manually, go directly to step 3 to use the pre-build image.
@@ -34,21 +42,6 @@ cd tidal-connect-docker-master/Docker
 ./build_docker.sh
 ```
 
-3. Run docker image using docker-compose
-
-```
-# Go to the <tidal-connect-docker>/Docker path
-
-cd tidal-connect-docker-master/Docker
-
-
-# Run docker image as daemon (start Tidal Connect)
-# Note: if you skipped step 2. the next command will also download the image from docker-hub, on first start.
-docker-compose up -d
-
-# Stop docker image (stop Tidal Connect)
-docker-compose down
-```
 
 
 # *** Other Stuff *** #
