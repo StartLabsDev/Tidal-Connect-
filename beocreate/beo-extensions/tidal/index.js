@@ -108,6 +108,7 @@ var fs = require("fs");
 	
 	
 	function gettidalStatus(callback) {
+            console.log('SERVER gettidalStatus()');
             exec("systemctl is-active --quiet tidal.service").on('exit', function(code) {
                console.log('gettidalStatus code'+ code);
 			if (code == 0) {
@@ -120,12 +121,33 @@ var fs = require("fs");
             });
             //console.log('HELLO MOTO!');            
             //settings.tidalEnabled = !settings.tidalEnabled;
-            //callback(settings.tidalEnabled);
 	}
 	
 	function settidalStatus(enabled, callback) {
-            settings.tidalEnabled = enabled;
-            callback(true);
+		if (enabled) {
+			exec("systemctl start --now tidal.service").on('exit', function(code) {
+				if (code == 0) {
+					settings.tidalEnabled = true;
+					if (debug) console.log("Roon enabled.");
+					callback(true);
+				} else {
+					roonEnabled = false;
+					callback(false, true);
+				}
+			});
+		} else {
+			exec("systemctl stop --now tidal.service").on('exit', function(code) {
+				settings.tidalEnabled = false;
+				if (code == 0) {
+					callback(false);
+					if (debug) console.log("Roon disabled.");
+				} else {
+					callback(false, true);
+				}
+			});
+		}
+            //settings.tidalEnabled = enabled;
+            //callback(true);
 	}
 	
 	function configure(options, relaunch, callback) {

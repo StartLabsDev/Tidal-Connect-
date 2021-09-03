@@ -5,8 +5,8 @@ var tidalEnabled = false;
 console.log('tidal-client.js added');
 
 $(document).on("tidal", function(event, data) {
-  console.log('RECEIVED EVENT');
-	if (data.header == "tidalSettings") {
+  console.log('tidal-client.js - RECEIVED EVENT');
+  	if (data.header == "tidalSettings") {
 		
 		if (data.content.tidalEnabled) {
 			tidalEnabled = true;
