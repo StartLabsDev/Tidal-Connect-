@@ -9,5 +9,6 @@ services:
     volumes:
       - ./entrypoint.sh:/entrypoint.sh
       - /var/run/dbus:/var/run/dbus
+    restart: always
     dns:
       - 8.8.8.8
