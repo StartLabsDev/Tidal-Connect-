@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Pulling latest image
+echo "Pulling latest image: 'docker pull edgecrush3r/tidal-connect:latest'."
+docker pull edgecrush3r/tidal-connect:latest
+
+
 # Enable service
 printf "\nEnabling Tidal Service...\n"
 #cp systemd/tidal.service /etc/systemd/system/

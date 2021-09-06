@@ -14,10 +14,11 @@ VALUE_MAP = {}
 
 
 for line in stdout.decode('utf-8').splitlines():
-  #print(line)
+  #print(line+'|')
+  # parse status
   if line.startswith('PlaybackState::'):
      VALUE_MAP['playback_state']=line.split('::')[1]
-
+  # parse props
   if line.startswith('xx',WINDOW_SIZE-1):
     for window_cnt in range(WINDOW_COUNT):
       str_keyvals = (line[(WINDOW_SIZE*window_cnt)+1:(WINDOW_SIZE*(window_cnt+1))-1].strip())
@@ -31,4 +32,8 @@ for line in stdout.decode('utf-8').splitlines():
         if value.startswith(sess_state_prefix):
            value = value[len(sess_state_prefix):] 
         VALUE_MAP[key]=value
+  # parse volume
+  if line.endswith('#k'):
+    value = line.strip()
+    VALUE_MAP["volume"]=value.count("#")
 print(VALUE_MAP)
